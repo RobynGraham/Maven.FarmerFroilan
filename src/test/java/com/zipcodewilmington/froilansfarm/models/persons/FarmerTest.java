@@ -99,28 +99,28 @@ public class FarmerTest {
     public void makeNoiseTest(){
         // Given
         Farmer farmer = new Farmer(null,new Farm());
-        String expected = "Bla bla bla";
+
 
         // When
         String actual = farmer.makeNoise();
 
         // Then
-        Assert.assertEquals(expected,actual);
+        System.out.println(actual);
     }
 
-//    @Test
-//    public void plantTest(){
-//        Integer expected = 2;
-//        Farmer farmer = new Farmer(null,new Farm());
-//        CropRow cropRow = new CropRow(new ArrayList<>());
-//        Crop crop0 = new PumpkinPlant();
-//        Crop crop1 = new CornStalk();
-//
-//        farmer.plant(crop0,cropRow);
-//        farmer.plant(crop1,cropRow);
-//
-//        Integer actual = cropRow.getCrops().size();
-//
-//        Assert.assertEquals(expected,actual);
-//    }
+    @Test
+    public void plantTest(){
+        Integer expected = 1;
+        Farmer farmer = new Farmer(null,new Farm());
+        CropRow cropRow = new CropRow(new ArrayList<>());
+        ArrayList<Crop> list = new ArrayList<>();
+        list.add(new CornStalk());
+
+        farmer.plant(list,cropRow);
+
+
+        Integer actual = cropRow.getCrops().size();
+
+        Assert.assertEquals(expected,actual);
+    }
 }

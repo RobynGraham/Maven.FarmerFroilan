@@ -7,9 +7,7 @@ import com.zipcodewilmington.froilansfarm.simulations.Tuesday;
 public class MainApplication {
     public static void main(String[] args) {
         Farm farm = new Farm();
-
         farm.run();
-
 
     }
 

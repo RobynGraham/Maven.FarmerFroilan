@@ -25,7 +25,7 @@ public class Farmer extends Person implements Botanist, Rider {
     }
 
     public String makeNoise() {
-        return "Bla bla bla";
+        return "Things are getting..... weird.";
     }
 
     public void mount(Rideable rideable) {
@@ -50,14 +50,6 @@ public class Farmer extends Person implements Botanist, Rider {
 
     @Override
     public void eat(Meal meal) {
-        int numOfFood;
-        if (meal == null) numOfFood = 0;
-        else numOfFood = meal.getNumOfFood();
-
-        String nameOfFood;
-        if (meal == null) nameOfFood = "Food";
-        else nameOfFood = meal.getFood().getClass().getSimpleName();
-
-        getIOConsole().println(getName() + " ate " + numOfFood + " " + nameOfFood + "\n");
+        getIOConsole().println(getName() + " ate " + meal.getNumOfFood() + " " + meal.getFood().getClass().getSimpleName());
     }
 }

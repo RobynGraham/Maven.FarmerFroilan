@@ -16,7 +16,7 @@ public class FarmPilot extends Person implements Pilot, Rider {
     }
 
     public String makeNoise() {
-        return "Ruuun";
+        return "Bears, Beets, Battlestar Galactica";
     }
 
     public void fly(Aircraft aircraft) {
@@ -41,14 +41,6 @@ public class FarmPilot extends Person implements Pilot, Rider {
 
     @Override
     public void eat(Meal meal) {
-        int numOfFood;
-        if (meal == null) numOfFood = 0;
-        else numOfFood = meal.getNumOfFood();
-
-        String nameOfFood;
-        if (meal == null) nameOfFood = "Food";
-        else nameOfFood = meal.getFood().getClass().getSimpleName();
-
-        getIOConsole().println(getName() + " ate " + numOfFood + " " + nameOfFood + "\n");
+        getIOConsole().println(getName() + " ate " + meal.getNumOfFood() + " " + meal.getFood().getClass().getSimpleName());
     }
 }
